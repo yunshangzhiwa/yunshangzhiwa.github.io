@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+  <style type="text/css">
+    html{height:100%}
+    body{height:100%;margin:0px;padding:0px}
+    #container{height:100%}
+  </style>
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=1.0&&type=webgl&ak=uTRuIg9jYtXND9Pw4MoDqfGnZ60ZRcPy">
+  </script>
+</head>
+<body>
+<div id="container"></div>
+<script type="text/javascript">
+  var map = new BMapGL.Map("container");
+  var point = new BMapGL.Point(98.765039, 25.462551);
+  map.centerAndZoom(point, 15);
+  map.enableScrollWheelZoom(true);
+  var scaleCtrl = new BMapGL.ScaleControl();  // 添加比例尺控件
+  map.addControl(scaleCtrl);
+  var zoomCtrl = new BMapGL.ZoomControl();  // 添加缩放控件
+  map.addControl(zoomCtrl);
+  var cityCtrl = new BMapGL.CityListControl();  // 添加城市列表控件
+  map.addControl(cityCtrl);
+  map.setMapType(BMAP_EARTH_MAP);      // 设置地图类型为地球模式
+
+
+</script>
+</body>
